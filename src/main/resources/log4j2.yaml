@@ -1,0 +1,17 @@
+Configutation:
+  name: Default
+  Properties:
+    Property:
+      name: log-path
+      value: "/tmp"
+  Appenders:
+    File:
+      name: File_Appender
+      fileName: ${log-path}/spring-boot.log
+      PatternLayout:
+        pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+  Loggers:
+      Root:
+        level: info
+        AppenderRef:
+          - ref: File_Appender
